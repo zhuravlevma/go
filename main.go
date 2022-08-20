@@ -85,7 +85,19 @@ func loop() {
 	for idx := range array {
 		fmt.Println("Elem is", array[idx])
 	}
+}
 
+func getFirstName() string {
+	return "Maksim"
+}
+
+func getSecondName() string {
+	return "Zhuravlev"
+}
+
+func getFullName() (fullName string) {
+	fullName = getFirstName() + " " + getSecondName()
+	return
 }
 
 func main() {
@@ -96,6 +108,8 @@ func main() {
 	childHeightInfo()
 
 	loop()
+
+	fmt.Println(getFullName())
 }
 
 
