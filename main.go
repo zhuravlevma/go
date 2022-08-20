@@ -31,7 +31,7 @@ func getParents() {
 }
 
 func getChildren()  {
-	children := [...]int{1, 2, 3}
+	children := [...]int{1, 2, 3} // slice
 
 	fmt.Println(children)
 }
@@ -65,6 +65,27 @@ func childHeightInfo() {
 	if _, kateExists := person["Kate"]; kateExists {
 		fmt.Println("Kate exists in person map")
 	}
+
+	height := person["Maksim"]
+	switch height {
+		case 145:
+			fmt.Println("Height is 145")
+			fallthrough
+		case 180:
+			fmt.Println("It's wrong. Height is 145")
+		case 190:
+			fmt.Println("Height is 190")
+
+	}
+}
+
+func loop() {
+	var array = []int{2, 3, 5, 7, 11, 13}
+	array = append(array, 12)
+	for idx := range array {
+		fmt.Println("Elem is", array[idx])
+	}
+
 }
 
 func main() {
@@ -73,6 +94,8 @@ func main() {
 	getChildren()
 	getFriends()
 	childHeightInfo()
+
+	loop()
 }
 
 
