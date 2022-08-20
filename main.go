@@ -61,6 +61,10 @@ func childHeightInfo() {
 	_, personExists := person["Goga"]
 
 	fmt.Println("Goga exists", personExists)
+
+	if _, kateExists := person["Kate"]; kateExists {
+		fmt.Println("Kate exists in person map")
+	}
 }
 
 func main() {
