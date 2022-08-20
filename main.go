@@ -60,7 +60,7 @@ func childHeightInfo() {
 
 	_, personExists := person["Goga"]
 
-	fmt.Println("Goga exists", personExists);
+	fmt.Println("Goga exists", personExists)
 }
 
 func main() {
