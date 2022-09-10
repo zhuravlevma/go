@@ -13,6 +13,6 @@ func (p *Person) SetSecondName(secondName string) {
 	p.SecondName = secondName
 }
 
-func (p *Person) getFullName() string {
+func (p *Person) GetFullName() string {
 	return p.FirstName + " " + p.SecondName
 }

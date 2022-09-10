@@ -1,9 +1,9 @@
 package main
-
 import (
 	"fmt"
 	"unicode/utf8"
 )
+
 
 func getPersonalInfo() string {
 	var fullName string
@@ -108,42 +108,45 @@ func checkError(number int) (int, error) {
 }
 
 func main() {
-	maksim := Person{}
-	maksim.SetFirstName("Maksim")
-	maksim.SetSecondName("Zhuravlev")
-	ivan := Person{}
+	var maksim Character = &Person{FirstName: "Maksim", SecondName: "Zhuravlev"}
+	ivan := &Person{}
 	ivan.SetFirstName("Ivan")
 	ivan.SetSecondName("Smirnov")
 
-	fmt.Println(maksim)
-	fmt.Println(ivan)
-	personalFunc := func(description string) {
-		fmt.Println("Description:", description)
-		getPersonalInfo()
-	}
+	animal := &Animal{Name: "Archi"}
 
-	relativeFunc := func(description string) {
-		fmt.Println("Description:", description)
-		getParents()
-		getChildren()
-		getFriends()
-		childHeightInfo()
-	}
+	PrintNameOfCharacter(maksim)
+	PrintNameOfCharacter(animal)
 
-	type personalFuncType func(string)
-	type relativeFuncType func(string)
-
-	printAllInfo := func (personalF personalFuncType, relativeF relativeFuncType) {
-		personalF("Personal Info")
-		relativeF("Relative info")
-	}
-
-	printAllInfo(personalFunc, relativeFunc)
-
-	loop()
-
-	fmt.Println(getFullName())
-	fmt.Println(checkError(102))
+	//fmt.Println(maksim)
+	//fmt.Println(ivan)
+	//personalFunc := func(description string) {
+	//	fmt.Println("Description:", description)
+	//	getPersonalInfo()
+	//}
+	//
+	//relativeFunc := func(description string) {
+	//	fmt.Println("Description:", description)
+	//	getParents()
+	//	getChildren()
+	//	getFriends()
+	//	childHeightInfo()
+	//}
+	//
+	//type personalFuncType func(string)
+	//type relativeFuncType func(string)
+	//
+	//printAllInfo := func (personalF personalFuncType, relativeF relativeFuncType) {
+	//	personalF("Personal Info")
+	//	relativeF("Relative info")
+	//}
+	//
+	//printAllInfo(personalFunc, relativeFunc)
+	//
+	//loop()
+	//
+	//fmt.Println(getFullName())
+	//fmt.Println(checkError(102))
 }
 
 
