@@ -100,16 +100,41 @@ func getFullName() (fullName string) {
 	return
 }
 
+func checkError(number int) (int, error) {
+	if number > 100 {
+		return 0, fmt.Errorf("NumberInvalid")
+	}
+	return number, nil
+}
+
 func main() {
-	getPersonalInfo()
-	getParents()
-	getChildren()
-	getFriends()
-	childHeightInfo()
+	personalFunc := func(description string) {
+		fmt.Println("Description:", description)
+		getPersonalInfo()
+	}
+
+	relativeFunc := func(description string) {
+		fmt.Println("Description:", description)
+		getParents()
+		getChildren()
+		getFriends()
+		childHeightInfo()
+	}
+
+	type personalFuncType func(string)
+	type relativeFuncType func(string)
+
+	printAllInfo := func (personalF personalFuncType, relativeF relativeFuncType) {
+		personalF("Personal Info")
+		relativeF("Relative info")
+	}
+
+	printAllInfo(personalFunc, relativeFunc)
 
 	loop()
 
 	fmt.Println(getFullName())
+	fmt.Println(checkError(102))
 }
 
 
