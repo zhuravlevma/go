@@ -108,6 +108,15 @@ func checkError(number int) (int, error) {
 }
 
 func main() {
+	maksim := Person{}
+	maksim.SetFirstName("Maksim")
+	maksim.SetSecondName("Zhuravlev")
+	ivan := Person{}
+	ivan.SetFirstName("Ivan")
+	ivan.SetSecondName("Smirnov")
+
+	fmt.Println(maksim)
+	fmt.Println(ivan)
 	personalFunc := func(description string) {
 		fmt.Println("Description:", description)
 		getPersonalInfo()
