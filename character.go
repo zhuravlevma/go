@@ -7,5 +7,10 @@ type Character interface {
 }
 
 func PrintNameOfCharacter(c Character) {
-	fmt.Println(c.GetFullName())
+	switch c.(type) {
+	case *Animal:
+		fmt.Println("It's an animal", c.GetFullName())
+	case *Person:
+		fmt.Println("It's a person", c.GetFullName())
+	}
 }
