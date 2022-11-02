@@ -5,7 +5,6 @@ import (
 	"unicode/utf8"
 )
 
-
 func getPersonalInfo() string {
 	var fullName string
 
@@ -26,27 +25,27 @@ func getPersonalInfo() string {
 
 func getParents() {
 	const size = 2 // с var компилятор будет ругаться
-	var parents [size] int
+	var parents [size]int
 
 	fmt.Println(parents)
 }
 
-func getChildren()  {
+func getChildren() {
 	children := [...]int{1, 2, 3} // slice
 
 	fmt.Println(children)
 }
 
 func getFriends() {
-	var friends [] int
+	var friends []int
 	fmt.Println(friends)
 
-	friendsNew := make([] int, 0)
+	friendsNew := make([]int, 0)
 
 	friendsNew = append(friendsNew, 2, 3)
 	fmt.Println("Friends new:", friendsNew)
 
-	copyFriends := make([] int, len(friendsNew), len(friendsNew))
+	copyFriends := make([]int, len(friendsNew), len(friendsNew))
 	fmt.Println("copy friends init:", copyFriends)
 	copy(copyFriends, friendsNew)
 	fmt.Println("copy friends:", copyFriends)
@@ -69,13 +68,13 @@ func childHeightInfo() {
 
 	height := person["Maksim"]
 	switch height {
-		case 145:
-			fmt.Println("Height is 145")
-			fallthrough
-		case 180:
-			fmt.Println("It's wrong. Height is 145")
-		case 190:
-			fmt.Println("Height is 190")
+	case 145:
+		fmt.Println("Height is 145")
+		fallthrough
+	case 180:
+		fmt.Println("It's wrong. Height is 145")
+	case 190:
+		fmt.Println("Height is 190")
 
 	}
 }
@@ -109,15 +108,17 @@ func checkError(number int) (int, error) {
 }
 
 func main() {
-	var maksim Character = &Person{FirstName: "Maksim", SecondName: "Zhuravlev"}
-	ivan := &Person{}
-	ivan.SetFirstName("Ivan")
-	ivan.SetSecondName("Smirnov")
-
-	animal := &Animal{Name: "Archi"}
-
-	PrintNameOfCharacter(maksim)
-	PrintNameOfCharacter(animal)
-
-	GorutineRun()
+	gorutine_channel2()
+	//gorutine_channel()
+	//var maksim Character = &Person{FirstName: "Maksim", SecondName: "Zhuravlev"}
+	//ivan := &Person{}
+	//ivan.SetFirstName("Ivan")
+	//ivan.SetSecondName("Smirnov")
+	//
+	//animal := &Animal{Name: "Archi"}
+	//
+	//PrintNameOfCharacter(maksim)
+	//PrintNameOfCharacter(animal)
+	//
+	//GorutineRun()
 }

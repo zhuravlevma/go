@@ -6,14 +6,15 @@ import (
 )
 
 func calculate(i int) {
-	for j:=0; j<5; j++ {
+	for j := 0; j < 5; j++ {
 		fmt.Println(i, j)
 		runtime.Gosched()
+		fmt.Println("dwdw")
 	}
 }
 
 func GorutineRun() {
-	for i:=0; i <5; i++ {
+	for i := 0; i < 5; i++ {
 		go calculate(i)
 		fmt.Println("next step")
 	}
